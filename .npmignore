@@ -1,0 +1,9 @@
+.idea/*
+.DS_Store
+.git
+node_modules/*
+.babelrc
+.gitignore
+.npmignore
+__test__/*
+package-lock.json
