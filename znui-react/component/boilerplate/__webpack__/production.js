@@ -1,0 +1,1 @@
+module.exports = require('znui-react/webpack').component.production;

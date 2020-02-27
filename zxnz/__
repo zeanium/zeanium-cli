@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+'use strict';
+var __ = require('../__/__');
+__.do({
+    application: require('./application/index'),
+    module: require('./module/index'),
+    plugin: require('./plugin/index')
+});

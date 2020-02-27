@@ -1,0 +1,23 @@
+{
+  "name": "application",
+  "version": "1.0.1",
+  "description": "application.",
+  "scripts": {
+    "zr.stage": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js",
+    "zr.stage.watch": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js --watch",
+    "zr.development": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js",
+    "zr.development.watch": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --watch",
+    "zr.production": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --uglify",
+    "zr.production.watch": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --watch",
+    "install.release": "npm install --production",
+    "install.dev": "npm install"
+  },
+  "keywords": [],
+  "author": "yangyxu",
+  "email": "xuyy0618@qq.com",
+  "license": "MIT",
+  "dependencies": {
+    "@zeanium/cli": "latest",
+    "znui-react": "latest"
+  }
+}

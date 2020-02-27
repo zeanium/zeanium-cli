@@ -1,0 +1,12 @@
+.idea/*
+.DS_Store
+.git
+example/*
+exports/*
+src/*
+webpack/*
+node_modules/*
+.babelrc
+.gitignore
+.npmignore
+package-lock.json

@@ -1,0 +1,30 @@
+{
+  "name": "@zeanium/cli",
+  "version": "1.0.1",
+  "description": "zeanium client tool for zxnz and znui-react package.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeanium/zeanium-cli.git"
+  },
+  "scripts": {
+    "publish": "npm publish --access public",
+    "unpublish": "npm unpublish --access public  --force"
+  },
+  "keywords": [
+    "zeanium",
+    "client",
+    "node"
+  ],
+  "author": "yangyxu",
+  "email": "xuyy0618@qq.com",
+  "license": "MIT",
+  "dependencies": {
+    "@zeanium/core": "^1.0.9"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "znui-react": "./znui-react/__",
+    "zxnz": "./zxnz/__"
+  }
+}

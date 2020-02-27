@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+'use strict';
+var __ = require('../__/__');
+__.do({
+    application: require('./application/index'),
+    component: require('./component/index'),
+    plugin: require('./plugin/index'),
+    zxnz: require('./zxnz/index')
+});

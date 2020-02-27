@@ -1,0 +1,36 @@
+{
+  "name": "znui-react-${component}",
+  "version": "1.0.1",
+  "description": "Web form component.",
+  "main": "./__exports__/production.js",
+  "scripts": {
+    "webpack-example": "rimraf example/dist && webpack --config ./__webpack__/example.js",
+    "webpack-example-watch": "rimraf example/dist && webpack --config ./__webpack__/example.js --watch",
+    "webpack-development": "rimraf dist && webpack --config ./__webpack__/development.js",
+    "webpack-development-watch": "rimraf dist && webpack --config ./__webpack__/development.js --watch",
+    "webpack-production": "rimraf dist && webpack --config ./__webpack__/production.js --uglify",
+    "webpack-production-watch": "rimraf dist && webpack --config ./__webpack__/production.js --watch",
+    "babel": "npm run build-clean && babel src -d build",
+    "babel-watch": "npm run build-clean && babel src -d build --watch",
+    "build": "npm run build-clean && babel src -d build",
+    "build-clean": "rimraf build",
+    "dist": "npm run dist-clean && webpack --config ./__webpack__/production.js --uglify",
+    "dist-clean": "rimraf dist",
+    "release": "npm run build && npm run dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/znui/znui-react-${component}.git"
+  },
+  "key": "component",
+  "keywords": [
+    "web", "component"
+  ],
+  "author": "yangyxu",
+  "email": "xuyy0618@qq.com",
+  "license": "MIT",
+  "dependencies": {
+    "@zeanium/cli": "latest",
+    "znui-react": "latest"
+  }
+}
