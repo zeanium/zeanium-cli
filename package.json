@@ -20,7 +20,7 @@
   "email": "xuyy0618@qq.com",
   "license": "MIT",
   "dependencies": {
-    "@zeanium/core": "^1.0.9"
+    "@zeanium/core": "latest"
   },
   "preferGlobal": true,
   "bin": {
