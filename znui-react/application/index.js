@@ -10,8 +10,9 @@ module.exports = {
         
         if(node_fs.existsSync(node_path.resolve(_target, 'package.json'))){
             _package = zn.deepAssign(require(node_path.resolve(_target, 'package.json')), {
+                scripts: _package.scripts,
                 dependencies: _package.dependencies,
-                scripts: _package.scripts
+                devDependencies: _package.devDependencies
             });
         } else {
             _package.name = argv.name;

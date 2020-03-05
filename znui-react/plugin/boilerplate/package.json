@@ -25,7 +25,9 @@
   "email": "xuyy0618@qq.com",
   "license": "MIT",
   "dependencies": {
-    "@zeanium/cli": "latest",
+    "@zeanium/cli": "latest"
+  },
+  "devDependencies": {
     "znui-react": "latest"
   }
 }
