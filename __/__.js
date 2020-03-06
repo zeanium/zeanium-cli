@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production';
+
 var path = require('path'),
     base = require('./base'),
     argv = process.argv,
@@ -53,12 +55,21 @@ var path = require('path'),
     _argv = __parseArgv__(argv);
 
 if(_argv.argv.zn_path){
-    require(path.resolve(process.cwd(), _argv.argv.zn_path));
+    require(path.join(process.cwd(), _argv.argv.zn_path));
 }else {
     require('@zeanium/core');
 }
 
+if(_argv.argv.mode) {
+    process.env.NODE_ENV = _argv.argv.mode;
+}
+
 _argv.do = function (modules){
+    zn.debug('mode: ', process.env.NODE_ENV);
+    if(process.env.NODE_ENV == 'development'){
+        zn.debug('cwd: ', zn.PATH);
+        zn.debug('zn_path', zn.ZN_PATH);
+    }
     var _env = _argv.env,
         _module = _env[2],
         _method = _env[3];
