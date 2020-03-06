@@ -52,8 +52,8 @@ var path = require('path'),
     },
     _argv = __parseArgv__(argv);
 
-if(_argv.argv.znpath){
-    require(path.resolve(process.cwd(), _argv.argv.znpath));
+if(_argv.argv.zn_path){
+    require(path.resolve(process.cwd(), _argv.argv.zn_path));
 }else {
     require('@zeanium/core');
 }

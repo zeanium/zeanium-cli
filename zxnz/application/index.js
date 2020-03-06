@@ -38,7 +38,7 @@ module.exports = {
     start: function (argv, env){
         var ZXNZLauncher = null;
         if(argv.zxnz_path) {
-            var _path = node_path.resolve(process.cwd(), argv.zxnz_path);
+            var _path = node_path.resolve(process.cwd(), argv.zxnz_path, 'Launcher.js');
             if(node_fs.existsSync(_path)) {
                 ZXNZLauncher = require(_path);
             }
