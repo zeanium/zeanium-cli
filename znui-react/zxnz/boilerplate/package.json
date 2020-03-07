@@ -3,10 +3,10 @@
   "version": "1.0.1",
   "description": "application.",
   "scripts": {
-    "zr.stage": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js",
+    "zr.development": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react",
+    "zr.development.watch": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --watch",
+    "zr.stage": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js --uglify",
     "zr.stage.watch": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js --watch",
-    "zr.development": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js",
-    "zr.development.watch": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --watch",
     "zr.production": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --uglify",
     "zr.production.watch": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --watch",
     "install.release": "npm install --production",
@@ -20,6 +20,17 @@
     "@zeanium/cli": "latest"
   },
   "devDependencies": {
-    "znui-react": "latest"
+    "znui-react": "latest",
+    "znui-react-button": "latest",
+    "znui-react-icon": "latest",
+    "znui-react-input": "latest",
+    "znui-react-layout": "latest",
+    "znui-react-loader": "latest",
+    "znui-react-pager": "latest",
+    "znui-react-popup": "latest",
+    "znui-react-router": "latest",
+    "znui-react-selector": "latest",
+    "znui-react-table": "latest",
+    "znui-react-tree": "latest"
   }
 }

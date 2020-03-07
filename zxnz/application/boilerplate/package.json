@@ -7,6 +7,7 @@
     "zxnz.online.production": "nohup zxnz run --config ./zn.server.production.js &",
     "zxnz.online.stage": "zxnz run --config ./zn.server.stage.js",
     "zxnz.online.development": "zxnz run --config ./zn.server.development.js",
+    "zxnz.development": "../../zeanium/zeanium-cli/zxnz/__ application start --mode development --zn_path ../../zeanium/zeanium --zxnz_path ../../zxnz/zxnz/ --server_path ../../zeanium/ --config ./src/zn.server.development.js",
     "zxnz.local.production": "node ../../zxnz/zxnz/bin/zxnz run  --zn_path ../../zeanium/zeanium/ --config ./zn.server.production.js",
     "zxnz.local.stage": "node ../../zxnz/zxnz/bin/zxnz run  --zn_path ../../zeanium/zeanium/ --config ./zn.server.stage.js",
     "zxnz.local.development": "node ../../zxnz/zxnz/bin/zxnz run  --zn_path ../../zeanium/zeanium/ --config ./zn.server.development.js",

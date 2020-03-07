@@ -1,7 +1,8 @@
 module.exports = {
     host: '0.0.0.0',
     port: 8080,
-    catalog: '/',
+    catalog: '/src/',
+    node_paths: ['../../zeanium/', '../../zxnz/'],
     databases: [
         {
             default: true,
@@ -9,8 +10,8 @@ module.exports = {
             port: 3306,
             host: '0.0.0.0',
             user: 'root',
-            password: '123456',
-            database:'mysql_test'
+            password: 'pwd',
+            database:'zxnz_xxx_development'
         }
     ]
 };
