@@ -39,23 +39,24 @@ module.exports = {
         
     },
     generateHtml: function (argv){
-        var _mode = argv.mode || process.env.NODE_ENV || 'production',
-            _cwd = process.cwd();
-        if(node_fs.existsSync(node_path.resolve(_cwd, './web/__webpack__/', _mode + '.html'))){
+        var _cwd = process.cwd(),
+            _mode = argv.mode || process.env.NODE_ENV || 'production',
+            _templateFile = node_path.resolve(_cwd, (argv.template || ('./web/__webpack__/' + _mode + '.html'))) ;
+        if(node_fs.existsSync(_templateFile)){
             var _package = require(node_path.resolve(_cwd, './package.json'));
-            var _data = argv.data || './web/__webpack__/' + _mode + '.json';
+            var _data = argv.data || ('./web/__webpack__/' + _mode + '.json');
             if(!node_fs.existsSync(node_path.resolve(_cwd, _data))){
                 throw new Error('data is not exist.');
             }
             _data = require(node_path.resolve(_cwd, _data));
-            _data = zn.deepExtend({
+            _data = zn.deepAssigns({
                 name: _package.name,
                 keywords: _package.keywords.join(','),
                 description: _package.description
             }, _data, argv);
-            var _template = node_fs.readFileSync(node_path.resolve(_cwd, './web/__webpack__/', _mode + '.html'), 'utf8');
+            var _template = node_fs.readFileSync(_templateFile, 'utf8');
             var _str = zn.json.format(_data, _template);
-            node_fs.writeFileSync(node_path.resolve(_cwd, './web/www/' + _data.name + ".html"), _str);
+            node_fs.writeFileSync(node_path.resolve(_cwd, argv.output || ('./web/www/' + _data.name + ".html")), _str);
         }
     }
 };
