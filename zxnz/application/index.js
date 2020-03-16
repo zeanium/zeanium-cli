@@ -51,8 +51,35 @@ module.exports = {
             throw new Error('zxnz is not exist.')
         }
     },
-    stop: function (argv, env){
-        
+    stop: function (argv, env, callback){
+        var _config = require(node_path.resolve(process.cwd(), argv.config || './zn.server.config.js'));
+        if(_config.port){
+            var _lsof = node_child_process.spawn('lsof', ['-i4TCP:' + _config.port]);
+            _lsof.stdout.on('data', (data) => {
+                var _data = data.toString('utf8'),
+                    _items = _data.split('\n');
+                for(var i = 1, _len = _items.length; i < _len; i++){
+                    if(_items[i].indexOf('node') == 0){
+                        zn.info('Closing: ', _items[i]);
+                        node_child_process.spawnSync('kill', ['-9', _items[i].split(' ')[4]]);
+                    }
+                }
+                callback && callback();
+            });
+              
+            _lsof.stderr.on('data', (err) => {
+                zn.error(`Error: ${err}`);
+            });
+
+            _lsof.on('close', (code) => {
+                callback && callback();
+                zn.info('Finished: ', code);
+            });
+        }
+    },
+    restart: function (argv, env){
+        this.stop(argv, env);
+        this.start(argv, env);
     },
     controller: function (argv){
         var _temp = `module.exports = zn.Controller('${argv.name.toLowerCase()}', {

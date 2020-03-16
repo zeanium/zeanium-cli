@@ -2,10 +2,8 @@
 .DS_Store
 .git
 example/*
-exports/*
-src/*
-webpack/*
 node_modules/*
+src/*
 .babelrc
 .gitignore
 .npmignore

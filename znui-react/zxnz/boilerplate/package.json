@@ -3,8 +3,11 @@
   "version": "1.0.1",
   "description": "application.",
   "scripts": {
-    "zr.development": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react",
-    "zr.development.watch": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --watch",
+    "zr.start": "rimraf ./web/www/dist/development && webpack-dev-server --config ./web/__webpack__/development.js --page admin --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --watch",
+    "zr.prod": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --page admin --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --uglify",
+    "zr.release": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --uglify",
+    "zr.development": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --watch",
+    "zr.development.dist": "rimraf ./web/www/dist/development && webpack --config ./web/__webpack__/development.js --znui-react.path ../../../../znui/ --resolve.alias.path ../../znui/ --resolve.alias.prefix znui-react --uglify",
     "zr.stage": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js --uglify",
     "zr.stage.watch": "rimraf ./web/www/dist/stage && webpack --config ./web/__webpack__/stage.js --watch",
     "zr.production": "rimraf ./web/www/dist/production && webpack --config ./web/__webpack__/production.js --uglify",

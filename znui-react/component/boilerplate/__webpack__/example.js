@@ -1,1 +1,0 @@
-module.exports = require('znui-react/webpack').component.example;

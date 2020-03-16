@@ -1,13 +1,14 @@
 {
-    "name": "index",
-    "title": "",
-    "keywords": "",
-    "description": "",
-    "logo": "",
-    "stylesheets": [
+    "links": {
 
-    ],
-    "scripts": [
-
-    ]
+    },
+    "externals": {
+        "zn": "./external/zn.minx.js",
+        "zn.web": "./external/zn.web.minx.js",
+        "react": "./external/react.production.min.js",
+        "react-dom": "./external/react-dom.production.min.js"
+    },
+    "scripts": {
+        
+    }
 }
