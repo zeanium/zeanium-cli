@@ -1,5 +1,4 @@
 process.env.NODE_ENV = 'production';
-
 var path = require('path'),
     base = require('./base'),
     argv = process.argv,
@@ -54,22 +53,17 @@ var path = require('path'),
     },
     _argv = __parseArgv__(argv);
 
+if(_argv.argv.mode){
+    process.env.NODE_ENV = _argv.argv.mode;
+}
+
 if(_argv.argv.zn_path){
     require(path.join(process.cwd(), _argv.argv.zn_path));
 }else {
     require('@zeanium/core');
 }
 
-if(_argv.argv.mode) {
-    process.env.NODE_ENV = _argv.argv.mode;
-}
-
 _argv.do = function (modules){
-    zn.debug('mode: ', process.env.NODE_ENV);
-    if(process.env.NODE_ENV == 'development'){
-        zn.debug('cwd: ', zn.PATH);
-        zn.debug('zn_path', zn.ZN_PATH);
-    }
     var _env = _argv.env,
         _module = _env[2],
         _method = _env[3];
@@ -79,7 +73,13 @@ _argv.do = function (modules){
     if(!modules[_module]) {
         throw new Error('Module "' + _module +'" is not exist.');
     }
+    
     zn.extend(modules[_module], base);
+    zn.debug('mode: ', process.env.NODE_ENV);
+    if(process.env.NODE_ENV == 'development'){
+        zn.debug('cwd: ', zn.PATH);
+        zn.debug('zn_path', zn.ZN_PATH);
+    }
 
     if(!modules[_module][_method]) {
         throw new Error('The method(' + _method +') of module ' + _module + ' is not exist.');
