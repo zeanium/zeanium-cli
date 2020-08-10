@@ -1,6 +1,6 @@
 {
   "name": "@zeanium/cli",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "zeanium client tool for zxnz and znui-react package.",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,8 @@
   "email": "xuyy0618@qq.com",
   "license": "MIT",
   "dependencies": {
-    "@zeanium/core": "latest"
+    "@zeanium/core": "latest",
+    "zxnz": "latest"
   },
   "preferGlobal": true,
   "bin": {
