@@ -1,6 +1,6 @@
 {
   "name": "@zeanium/cli",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "zeanium client tool for zxnz and znui-react package.",
   "main": "index.js",
   "repository": {
