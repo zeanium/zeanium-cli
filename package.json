@@ -1,6 +1,6 @@
 {
   "name": "@zeanium/cli",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "zeanium client tool for zxnz and znui-react package.",
   "main": "index.js",
   "repository": {
@@ -26,6 +26,7 @@
   "preferGlobal": true,
   "bin": {
     "znui-react": "./znui-react/__",
+    "zxnz.dev": "./zxnz/__.dev",
     "zxnz": "./zxnz/__"
   }
 }
